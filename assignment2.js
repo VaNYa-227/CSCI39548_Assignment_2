@@ -102,7 +102,9 @@ Object.grabKeys = function(obj) {
 };
 
 // VALUES //
-Object.grabValues = function() {
-
+Object.grabValues = function(obj) {
+    const newArray = [];
+    for(let i in obj) {newArray.push(obj[i]);} //For loop
+    return newArray;
 };
 
