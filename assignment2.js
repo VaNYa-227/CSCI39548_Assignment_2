@@ -6,9 +6,14 @@ Array.prototype.myEach = function(callbackFn) {
     }
 };
 
-// MAP //
-Array.prototype.myMap = function() {
-
+// MAP - Will create new array filled with the elements from call array//
+Array.prototype.myMap = function(callbackFn) {
+    const newNumber = [];
+    for( let i = 0; i < this.length; i++){ // For loop
+        if(this[i] === undefined) {continue;} // If undefined
+        newNumber[i] = callbackFn(this[i],i, this); // Put new values in the array
+    }
+    return newNumber;
 };
 
 // FILTER //
