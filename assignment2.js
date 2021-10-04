@@ -16,9 +16,16 @@ Array.prototype.myMap = function(callbackFn) {
     return newNumber;
 };
 
-// FILTER //
-Array.prototype.myFilter = function() {
-
+// FILTER - Makes new array with the elemets that pass the through the filter//
+Array.prototype.myFilter = function(callbackFn) {
+    const newArray = [];
+    for( let i = 0; i < this.length; i++){ // For loop
+        if(this[i] === undefined) {continue;} // If undefined
+        if(callbackFn(this[i],i, this)){ // If OK add to array
+            newArray.push(this[i]); // Pushes
+        }
+    }
+    return newArray;
 };
 
 // SOME //
