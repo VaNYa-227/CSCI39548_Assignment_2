@@ -28,7 +28,7 @@ Array.prototype.myFilter = function(callbackFn) {
     return newArray;
 };
 
-// SOME - Checks if an element in the array passes the condition //
+// SOME - Checks if an element in the array passes the condition//
 Array.prototype.mySome = function(callbackFn) {
     for( let i = 0; i < this.length; i++){ // For loop
         if(this[i] === undefined) {continue;} // If undefined
@@ -37,9 +37,13 @@ Array.prototype.mySome = function(callbackFn) {
     return false;
 };
 
-// EVERY //
-Array.prototype.myEvery = function() {
-
+// EVERY - Checks if all elements in the array pass the condition//
+Array.prototype.myEvery = function(callbackFn) {
+    for( let i = 0; i < this.length; i++){ // For loop
+        if(this[i] === undefined) {continue;} // If undefined
+        if(callbackFn(this[i],i, this) === false) {return false;} // If one does not pass
+    }
+    return true;
 };
 
 // REDUCE //
