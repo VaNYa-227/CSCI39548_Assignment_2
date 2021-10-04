@@ -41,9 +41,15 @@ Array.prototype.myIndexOf = function() {
 
 };
 
-// PUSH //
-Array.prototype.myPush = function() {
-
+// PUSH - Modifies the array so that elemets are added to the back of the array//
+Array.prototype.myPush = function(...args) {
+    let arg_i = 0;
+    let length = this.length; //Argument
+    for ( let i = length; i < length + args.length;i++){ // For loop
+        this[i] = args[arg_i]; // New index maches args
+        arg_i++; // Increase by 1 to add next element
+    }
+    return this.length;
 };
 
 // LASTINDEXOF //
