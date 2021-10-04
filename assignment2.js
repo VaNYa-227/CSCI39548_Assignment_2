@@ -28,9 +28,13 @@ Array.prototype.myFilter = function(callbackFn) {
     return newArray;
 };
 
-// SOME //
-Array.prototype.mySome = function() {
-
+// SOME - Checks if an element in the array passes the condition //
+Array.prototype.mySome = function(callbackFn) {
+    for( let i = 0; i < this.length; i++){ // For loop
+        if(this[i] === undefined) {continue;} // If undefined
+        if(callbackFn(this[i],i, this)) return true; // True if pass False if fail
+    }
+    return false;
 };
 
 // EVERY //
