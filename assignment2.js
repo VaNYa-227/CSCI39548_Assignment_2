@@ -95,8 +95,10 @@ Array.prototype.myLastIndexOf = function(arg1, arg2 = this.length-1) {
 };
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(obj) {
+    const newArray = [];
+    for(let i in obj) {newArray.push(i);} //For loop
+    return newArray;
 };
 
 // VALUES //
