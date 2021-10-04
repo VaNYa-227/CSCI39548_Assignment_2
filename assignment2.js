@@ -94,17 +94,17 @@ Array.prototype.myLastIndexOf = function(arg1, arg2 = this.length-1) {
     return -1; //If does not exist
 };
 
-// KEYS //
+// KEYS - Gives array which elements are strings "" corresponding to object //
 Object.grabKeys = function(obj) {
     const newArray = [];
-    for(let i in obj) {newArray.push(i);} //For loop
+    for(let i in obj) {newArray.push(i);} //For loop key
     return newArray;
 };
 
-// VALUES //
+// VALUES - Gives an array with the enumerable values found in the object//
 Object.grabValues = function(obj) {
     const newArray = [];
-    for(let i in obj) {newArray.push(obj[i]);} //For loop
+    for(let i in obj) {newArray.push(obj[i]);} //For loop key
     return newArray;
 };
 
