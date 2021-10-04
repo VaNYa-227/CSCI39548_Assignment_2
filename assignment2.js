@@ -46,9 +46,14 @@ Array.prototype.myEvery = function(callbackFn) {
     return true;
 };
 
-// REDUCE //
-Array.prototype.myReduce = function() {
-
+// REDUCE - For each element in the array it invokes the callback updating the accumulator at each step//
+Array.prototype.myReduce = function(callbackFn) {
+    let Total = 0;
+    let a = 0;
+    for(let i = 0; i< this.length; i++){ // For loop
+        Total += callbackFn(a,this[i],i, this); // Total
+    }
+    return Total;
 };
 
 // INCLUDES //
