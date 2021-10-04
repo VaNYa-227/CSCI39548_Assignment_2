@@ -65,9 +65,13 @@ Array.prototype.myIncludes = function(arg1, arg2=0) { // Not callback
     return false;
 };
 
-// INDEXOF //
-Array.prototype.myIndexOf = function() {
-
+// INDEXOF - Checks the index of the given elemet in the array//
+Array.prototype.myIndexOf = function(arg1, arg2=0) {
+    for( let i = arg2; i < this.length; i++){ // For loop
+        if(this[i] === undefined) {continue;} // If undefined
+        if(arg1 === this[i]) {return i;} // Returns index
+    }
+    return -1; //If does not exist
 };
 
 // PUSH - Modifies the array so that elemets are added to the back of the array//
